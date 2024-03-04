@@ -12,7 +12,7 @@ resource "aws_elasticache_subnet_group" "vprofile-ecache-subgrp" {
 
 }
 
-resource "aws_db_instances" "vprofile_rds" {
+resource "aws_db_instance" "vprofile-rds" {
  allocated_storage        = 20
  storage_type             = "gp2"
  engine                   = "mysql"
