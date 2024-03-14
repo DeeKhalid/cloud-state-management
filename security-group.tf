@@ -71,11 +71,11 @@ resource "aws_security_group" "vprofile-backend-sg" {
   }
 }
 
-resource "aws_security_group_rule" "sec_group_allow_itself" {
+resource "aws_security_group_rule" "security_group_allow_itself" {
   from_port                = 0
   protocol                 = "tcp"
-  security_group_id        = "aws_security_group.vprofile-backend-sg.id"
-  source_security_group_id = "aws_security_group.vprofile-backend-sg.id"
+  security_group_id        = aws_security_group.vprofile-backend-sg.id
+  source_security_group_id = aws_security_group.vprofile-backend-sg.id
   to_port                  = 65535
   type                     = "ingress"
 }
